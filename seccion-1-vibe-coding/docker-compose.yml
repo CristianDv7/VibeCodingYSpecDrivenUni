@@ -1,0 +1,114 @@
+services:
+
+  # ============================================================
+  # MySQL 8
+  # ============================================================
+  mysql:
+    image: mysql:8.0
+    container_name: tallerdae-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    # Puerto expuesto solo dentro de la red interna (tallerdae-net).
+    # No se publica en el host intencionalmente.
+    expose:
+      - "3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - tallerdae-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ============================================================
+  # Backend — Spring Boot (cotizador-backend)
+  # Puerto 8080 expuesto solo dentro de la red; el host no tiene
+  # acceso directo, todo el tráfico llega a través de Nginx.
+  # ============================================================
+  backend:
+    build:
+      context: ../seccion-2-spec-driven-back
+      dockerfile: Dockerfile
+    image: tallerdae-backend:latest
+    container_name: tallerdae-backend
+    restart: unless-stopped
+    environment:
+      # Hace que todas las rutas del backend empiecen con /api,
+      # alineándose con el proxy_pass de Nginx y las llamadas del frontend.
+      SPRING_MVC_PATHMATCH_USE_SUFFIX_PATTERN: "false"
+      SERVER_SERVLET_CONTEXT_PATH: /api
+      # Fuerza UTF-8 en las respuestas JSON
+      SPRING_MANDATORY_CHARSET: "true"
+      SERVER_SERVLET_ENCODING_CHARSET: UTF-8
+      SERVER_SERVLET_ENCODING_ENABLED: "true"
+      SERVER_SERVLET_ENCODING_FORCE: "true"
+    expose:
+      - "8080"
+    networks:
+      - tallerdae-net
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/actuator/health || wget -qO- http://localhost:8080/api/ || exit 0"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 45s
+
+  # ============================================================
+  # Nginx — servidor estático del frontend + proxy hacia /api/
+  # ============================================================
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: tallerdae-nginx
+    restart: unless-stopped
+    # Deshabilita el entrypoint de Nginx que modifica conf.d/default.conf
+    # y arranca directamente con nuestra configuración personalizada.
+    entrypoint: ["nginx", "-g", "daemon off;"]
+    ports:
+      - "${NGINX_PORT:-80}:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../seccion-2-spec-driven-front/cotizador-frontend:/usr/share/nginx/html:ro
+      - ./nginx/logs:/var/log/nginx
+    networks:
+      - tallerdae-net
+    depends_on:
+      backend:
+        condition: service_started
+
+  # ============================================================
+  # Adminer — interfaz web para administrar MySQL
+  # ============================================================
+  adminer:
+    image: adminer:4-standalone
+    container_name: tallerdae-adminer
+    restart: unless-stopped
+    ports:
+      - "${ADMINER_PORT:-8081}:8080"
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+    networks:
+      - tallerdae-net
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+# ============================================================
+# Volúmenes y redes
+# ============================================================
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  tallerdae-net:
+    driver: bridge

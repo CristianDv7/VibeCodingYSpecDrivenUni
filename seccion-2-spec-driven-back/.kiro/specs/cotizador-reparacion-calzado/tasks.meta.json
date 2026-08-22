@@ -1,0 +1,125 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Configurar el proyecto Spring Boot y la estructura de paquetes": [
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286077920
+      },
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286378110
+      }
+    ],
+    "2.1 Crear el Value Object `Calzado`": [
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286425857
+      },
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286473944
+      }
+    ],
+    "2.2 Crear el Value Object `Reparacion`": [
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286427074
+      },
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286532005
+      }
+    ],
+    "2.3 Crear la interfaz `UrgencyPricingStrategy`": [
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286559878
+      },
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286621571
+      }
+    ],
+    "2.4 Crear `NonUrgentPricingStrategy`": [
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286646878
+      },
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286692302
+      }
+    ],
+    "2.5 Crear `UrgentPricingStrategy`": [
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286727403
+      },
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286764703
+      }
+    ],
+    "2.6 Crear `CalzadoNotFoundException`": [
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787286805994
+      },
+      {
+        "executionId": "3d795c6a-53ea-46e7-8116-067265facbb8",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787287195041
+      },
+      {
+        "executionId": "fffe7b94-9593-4679-8d66-2e5b215b5b83",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787287266700
+      }
+    ],
+    "2.7 Crear `ReparacionNotFoundException`": [
+      {
+        "executionId": "fffe7b94-9593-4679-8d66-2e5b215b5b83",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787287287599
+      },
+      {
+        "executionId": "fffe7b94-9593-4679-8d66-2e5b215b5b83",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787287324136
+      }
+    ],
+    "2.8 Crear `ReparacionesVaciasException`": [
+      {
+        "executionId": "fffe7b94-9593-4679-8d66-2e5b215b5b83",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787287338028
+      },
+      {
+        "executionId": "fffe7b94-9593-4679-8d66-2e5b215b5b83",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787287371887
+      }
+    ],
+    "2.9 Crear `CotizacionNotFoundException`": [
+      {
+        "executionId": "fffe7b94-9593-4679-8d66-2e5b215b5b83",
+        "chatSessionId": "sess_0368b1da-ad59-492e-908d-eda2b9cfb395",
+        "timestamp": 1787287384448
+      }
+    ]
+  }
+}

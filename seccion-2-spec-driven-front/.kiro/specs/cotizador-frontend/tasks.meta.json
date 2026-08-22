@@ -1,0 +1,235 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Scaffolding del proyecto y configuración de Vitest": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281515994
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281525577
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281947956
+      }
+    ],
+    "2. Crear `index.html`": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516171
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281953168
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787287653128
+      }
+    ],
+    "3. Crear `css/estilos.css`": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516210
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281953814
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787287653765
+      }
+    ],
+    "4. Implementar `js/state.js`": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516255
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281954564
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787287654552
+      }
+    ],
+    "5. Implementar `js/api.js`": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516314
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281955323
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787287655315
+      }
+    ],
+    "6. Implementar `js/mock.js`": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516349
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281956081
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787287656082
+      }
+    ],
+    "7.1 Implementar funciones de utilidad y lógica de selección": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516388
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787287661520
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787288141874
+      }
+    ],
+    "7.2 Implementar funciones de gestión de estados de pantalla": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516423
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787287662193
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787288142596
+      }
+    ],
+    "7.3 Implementar funciones de renderizado": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516459
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787287662968
+      },
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787288143305
+      }
+    ],
+    "7.4 Implementar event listeners y handlers": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516497
+      }
+    ],
+    "7.5 Implementar `actualizarUI`, `cargarCatalogo`, `solicitarCotizacion` e `inicializar`": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516567
+      }
+    ],
+    "8. Checkpoint — Verificar integración básica con mock": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516606
+      }
+    ],
+    "9. Tests unitarios con Vitest": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516645
+      }
+    ],
+    "10. Tests de propiedades — Propiedad 1: Renderizado fiel del catálogo": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516682
+      }
+    ],
+    "11. Tests de propiedades — Propiedad 2: Estado del botón refleja la validez de la selección": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516717
+      }
+    ],
+    "12. Tests de propiedades — Propiedad 3: `construirRequestCotizacion` mapea fielmente el estado": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516757
+      }
+    ],
+    "13. Tests de propiedades — Propiedad 4: `renderResultado` muestra los valores exactos": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516789
+      }
+    ],
+    "14. Tests de propiedades — Propiedad 5: Selección se preserva tras error de API": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516830
+      }
+    ],
+    "15. Tests de propiedades — Propiedad 6: Cambio en selección oculta el panel de resultado": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516868
+      }
+    ],
+    "16. Checkpoint final — Verificar que todos los tests pasan": [
+      {
+        "executionId": "dc2209e9-5c57-4c98-a34b-0b45ea1833ad",
+        "chatSessionId": "sess_f566fdd8-9788-4f0a-94fe-75f7337cea00",
+        "timestamp": 1787281516905
+      }
+    ]
+  }
+}

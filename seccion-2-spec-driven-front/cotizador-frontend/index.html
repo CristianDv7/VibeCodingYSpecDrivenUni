@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador de Reparación de Calzados</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <main>
+    <h1>Cotizador de Reparación de Calzados</h1>
+
+    <!-- Sección: Selección de tipo de calzado -->
+    <section id="seccion-calzado">
+      <label for="tipo-calzado-select">Tipo de calzado</label>
+      <select id="tipo-calzado-select">
+        <option value="">Cargando...</option>
+      </select>
+    </section>
+
+    <!-- Sección: Lista de reparaciones -->
+    <section id="seccion-reparaciones">
+      <fieldset>
+        <legend>Reparaciones</legend>
+        <!-- Los checkboxes se insertan dinámicamente -->
+        <div id="lista-reparaciones">
+          <p>Cargando...</p>
+        </div>
+      </fieldset>
+    </section>
+
+    <!-- Sección: Urgencia -->
+    <section id="seccion-urgencia">
+      <label>
+        <input type="checkbox" id="urgente-checkbox">
+        Servicio urgente
+      </label>
+    </section>
+
+    <!-- Botón de acción -->
+    <button type="button" id="boton-cotizar" disabled>Cotizar</button>
+
+    <!-- Panel de resultado (oculto por defecto) -->
+    <section id="resultado-cotizacion" class="oculto" aria-live="polite">
+      <h2>Resultado de la cotización</h2>
+      <dl>
+        <dt>Subtotal</dt>
+        <dd id="resultado-subtotal"></dd>
+        <dt>Recargo por urgencia</dt>
+        <dd id="resultado-recargo"></dd>
+        <dt>Total</dt>
+        <dd id="resultado-total"></dd>
+        <dt>Tiempo estimado de entrega</dt>
+        <dd id="resultado-tiempo"></dd>
+      </dl>
+    </section>
+
+    <!-- Mensaje de error (oculto por defecto) -->
+    <p id="mensaje-error" class="oculto" role="alert"></p>
+
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

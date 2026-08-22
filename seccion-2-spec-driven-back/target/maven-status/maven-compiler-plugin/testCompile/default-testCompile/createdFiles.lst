@@ -1,0 +1,7 @@
+com\tallerdae\cotizador\properties\CotizacionPropertyTest.class
+com\tallerdae\cotizador\domain\UrgentPricingStrategyTest.class
+com\tallerdae\cotizador\CotizadorApplicationTests.class
+com\tallerdae\cotizador\domain\CotizacionTest.class
+com\tallerdae\cotizador\properties\CalzadoPropertyTest.class
+com\tallerdae\cotizador\properties\ServicioPropertyTest.class
+com\tallerdae\cotizador\properties\ReparacionPropertyTest.class

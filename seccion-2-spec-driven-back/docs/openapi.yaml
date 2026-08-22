@@ -1,0 +1,260 @@
+openapi: 3.0.3
+info:
+  title: Cotizador de Reparación de Calzado API
+  description: API REST para generar cotizaciones de reparación de calzado con soporte para servicios urgentes y no urgentes.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Servidor de desarrollo local
+
+tags:
+  - name: Calzados
+    description: Operaciones sobre tipos de calzado disponibles
+  - name: Reparaciones
+    description: Operaciones sobre reparaciones disponibles
+  - name: Cotizaciones
+    description: Generación de cotizaciones de reparación
+
+paths:
+  /calzados:
+    get:
+      tags:
+        - Calzados
+      summary: Lista todos los tipos de calzado disponibles
+      operationId: listarCalzados
+      responses:
+        "200":
+          description: Lista de calzados obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CalzadoResponse"
+              example:
+                - id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+                  nombre: "Zapato de vestir"
+                  factorComplejidad: 1.5
+                - id: "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+                  nombre: "Bota de cuero"
+                  factorComplejidad: 2.0
+
+  /reparaciones:
+    get:
+      tags:
+        - Reparaciones
+      summary: Lista todas las reparaciones disponibles
+      operationId: listarReparaciones
+      responses:
+        "200":
+          description: Lista de reparaciones obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ReparacionResponse"
+              example:
+                - id: "c3d4e5f6-a7b8-9012-cdef-123456789012"
+                  nombre: "Cambio de suela"
+                  precioBase: 25000.00
+                  tiempoEstimadoDias: 3
+                - id: "d4e5f6a7-b8c9-0123-defa-234567890123"
+                  nombre: "Costura reforzada"
+                  precioBase: 15000.00
+                  tiempoEstimadoDias: 2
+
+  /cotizaciones:
+    post:
+      tags:
+        - Cotizaciones
+      summary: Genera una cotización estimada
+      operationId: generarCotizacion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CotizacionRequest"
+            example:
+              calzadoId: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+              reparacionIds:
+                - "c3d4e5f6-a7b8-9012-cdef-123456789012"
+                - "d4e5f6a7-b8c9-0123-defa-234567890123"
+              esUrgente: true
+      responses:
+        "201":
+          description: Cotización generada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CotizacionResponse"
+              example:
+                id: "e5f6a7b8-c9d0-1234-efab-345678901234"
+                fechaCreacion: "2024-01-15T10:30:00"
+                subtotal: 60000.00
+                recargoUrgencia: 12000.00
+                total: 72000.00
+                tiempoEstimadoDias: 2
+        "400":
+          description: Lista de reparaciones vacía
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                timestamp: "2024-01-15T10:30:00"
+                status: 400
+                error: "Bad Request"
+                message: "La lista de reparaciones no puede estar vacía"
+                path: "/cotizaciones"
+        "404":
+          description: Calzado o reparación no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                timestamp: "2024-01-15T10:30:00"
+                status: 404
+                error: "Not Found"
+                message: "Calzado no encontrado con id: a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+                path: "/cotizaciones"
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              example:
+                timestamp: "2024-01-15T10:30:00"
+                status: 500
+                error: "Internal Server Error"
+                message: "Error interno del servidor"
+                path: "/cotizaciones"
+
+components:
+  schemas:
+    CalzadoResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Identificador único del calzado
+        nombre:
+          type: string
+          description: Nombre del tipo de calzado
+        factorComplejidad:
+          type: number
+          format: double
+          description: Factor de complejidad que afecta el costo de reparación
+      required:
+        - id
+        - nombre
+        - factorComplejidad
+
+    ReparacionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Identificador único de la reparación
+        nombre:
+          type: string
+          description: Nombre de la reparación
+        precioBase:
+          type: number
+          format: double
+          description: Precio base de la reparación
+        tiempoEstimadoDias:
+          type: integer
+          description: Tiempo estimado en días para completar la reparación
+      required:
+        - id
+        - nombre
+        - precioBase
+        - tiempoEstimadoDias
+
+    CotizacionRequest:
+      type: object
+      properties:
+        calzadoId:
+          type: string
+          format: uuid
+          description: Identificador del tipo de calzado a reparar
+        reparacionIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: Lista de identificadores de las reparaciones solicitadas
+        esUrgente:
+          type: boolean
+          description: Indica si el pedido requiere servicio urgente
+      required:
+        - calzadoId
+        - reparacionIds
+        - esUrgente
+
+    CotizacionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Identificador único de la cotización generada
+        fechaCreacion:
+          type: string
+          format: date-time
+          description: Fecha y hora de creación de la cotización
+        subtotal:
+          type: number
+          format: double
+          description: Subtotal antes de aplicar recargo por urgencia
+        recargoUrgencia:
+          type: number
+          format: double
+          description: Monto del recargo por urgencia (0 si no es urgente)
+        total:
+          type: number
+          format: double
+          description: Total final de la cotización (subtotal + recargo)
+        tiempoEstimadoDias:
+          type: integer
+          description: Tiempo estimado total en días para completar las reparaciones
+      required:
+        - id
+        - fechaCreacion
+        - subtotal
+        - recargoUrgencia
+        - total
+        - tiempoEstimadoDias
+
+    ErrorResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          description: Momento en que ocurrió el error
+        status:
+          type: integer
+          description: Código de estado HTTP
+        error:
+          type: string
+          description: Descripción corta del tipo de error
+        message:
+          type: string
+          description: Mensaje descriptivo del error
+        path:
+          type: string
+          description: Ruta del endpoint que generó el error
+      required:
+        - timestamp
+        - status
+        - error
+        - message
+        - path
